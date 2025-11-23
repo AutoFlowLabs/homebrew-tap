@@ -7,8 +7,8 @@ class Bridgelink < Formula
 
   desc "CLI tool to expose Android devices remotely via NativeBridge"
   homepage "https://github.com/AutoFlowLabs/bridgelink"
-  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.2.1.tar.gz"
-  sha256 "a70faa3f77651d300cd2eee42e24272b709e92f373d0e8ff9a38e3cb5f42c885"  # Update this after PyPI release
+  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.2.2.tar.gz"
+  sha256 "52a67d1fb7a5fb873a3f383457fd7b0dd48a947415a475b8dc2e0ab95899de15"  # Update this after PyPI release
   license "MIT"
   head "https://github.com/AutoFlowLabs/bridgelink.git", branch: "production"
 
@@ -63,31 +63,25 @@ class Bridgelink < Formula
     virtualenv_install_with_resources
   end
 
-  def post_install
-    # Install bore tunnel binary
-    ohai "Installing bore tunnel binary..."
-    system "#{bin}/bridgelink", "install", "--bore-only"
-  end
-
   def caveats
     <<~EOS
       BridgeLink has been installed!
 
       Quick Start:
-        1. Set your API key:
+        1. Run setup to install required tools (ADB, bore):
+           bridgelink setup
+
+        2. Set your API key:
            export NB_API_KEY='your-api-key'
 
-        2. Add a device:
+        3. Add a device:
            bridgelink devices add <device-serial>
 
-        3. Connect remotely:
+        4. Connect remotely:
            adb connect bridgelink.nativebridge.io:<port>
 
       Get your API key: https://nativebridge.io/dashboard/api-keys
       Documentation: https://github.com/AutoFlowLabs/bridgelink
-
-      Note: If ADB is not installed, run:
-        brew install android-platform-tools
     EOS
   end
 
