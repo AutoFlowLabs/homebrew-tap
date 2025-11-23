@@ -7,13 +7,12 @@ class Bridgelink < Formula
 
   desc "CLI tool to expose Android devices remotely via NativeBridge"
   homepage "https://github.com/AutoFlowLabs/bridgelink"
-  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.2.0.tar.gz"
+  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.2.1.tar.gz"
   sha256 "a70faa3f77651d300cd2eee42e24272b709e92f373d0e8ff9a38e3cb5f42c885"  # Update this after PyPI release
   license "MIT"
   head "https://github.com/AutoFlowLabs/bridgelink.git", branch: "production"
 
   depends_on "python@3.11"
-  depends_on "android-platform-tools" => :recommended  # For ADB
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/source/c/click/click-8.1.7.tar.gz"
