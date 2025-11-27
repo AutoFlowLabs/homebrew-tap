@@ -7,8 +7,8 @@ class Bridgelink < Formula
 
   desc "CLI tool to expose Android devices remotely via NativeBridge"
   homepage "https://github.com/AutoFlowLabs/bridgelink"
-  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.2.2.tar.gz"
-  sha256 "52a67d1fb7a5fb873a3f383457fd7b0dd48a947415a475b8dc2e0ab95899de15"  # Update this after PyPI release
+  url "https://files.pythonhosted.org/packages/source/b/bridgelink/bridgelink-0.3.0.tar.gz"
+  sha256 "28e82e2a8b5a5793f713c1c7b57360dac62426d7be7d00b3a47fa8c60bb2a66e"  # Update this after PyPI release
   license "MIT"
   head "https://github.com/AutoFlowLabs/bridgelink.git", branch: "production"
 
